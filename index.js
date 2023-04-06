@@ -54,11 +54,13 @@ app.post("/add", function(req,res){
 
 app.get("/remove/:id", function(req,res){
     Passageiros.destroy({where: {'id':req.params.id}}).then(function(){
-        res.send("Passageiro Removido");
+        res.redirect("/pass");
     }).catch(function(erro){
         res.send("Erro: " + erro);
     })
 });
+
+//acima criei uma rota do tipo get para remover um passageiro
 
 app.listen(8081, function(){
     console.log("Server rodando");
