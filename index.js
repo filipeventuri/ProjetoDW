@@ -25,14 +25,19 @@ app.get("/", function(req,res){
 });
 //acima criei uma rota para a pagina inicial
 
-app.get("/passageiros", function(req,res){
-    res.render("homePage");
+app.get("/pass", function(req,res){
+   Passageiros.findAll({order:[['id','DESC']]}).then(function(lista){
+    res.render("passageiros", {lista:lista});
+   });
+   
 });
+//acima criei uma rota para renderizar a pagina lista e exibir todos passageiros cadastrados
 
 app.get("/cad", function(req,res){
     res.render("cadastro");
 });
 //acima criei uma rota do tipo get para renderizar o html cadastro
+
 
 app.post("/add", function(req,res){
     Passageiros.create({
@@ -46,6 +51,14 @@ app.post("/add", function(req,res){
     })
 });
 //acima criei uma rota do tipo post a qual adiciona os dados passados pelo formulário de action /add no banco de dados
+
+app.get("/remove/:id", function(req,res){
+    Passageiros.destroy({where: {'id':req.params.id}}).then(function(){
+        res.send("Passageiro Removido");
+    }).catch(function(erro){
+        res.send("Erro: " + erro);
+    })
+});
 
 app.listen(8081, function(){
     console.log("Server rodando");

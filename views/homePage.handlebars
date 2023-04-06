@@ -2,11 +2,16 @@
 
     <div class="login">
         <h1> Central de acesso</h1>
-        <input type="text" placeholder="Código">
+        <form action="/check" method="GET">
+        <input type="text" name="codigo" placeholder="Código">
         <br><br>
-        <form action="/cad" method="GET">
-        <input type="submit" name="submit" value="Cadastrar Passageiro"/>
+        <input type="submit" name="submit" value="Enviar"/>
         </form>
         
+        <div>
+            <br>
+            <a href="/cad"><button>Cadastrar passageiro</button></a>
+            <a href="/pass"><button>Lista de passageiros</button></a>
+        </div>
     </div>
 
