@@ -21,9 +21,13 @@ app.set("view engine", "handlebars");
 //acima estou configurando a template engine
 
 app.get("/", function(req,res){
-    res.send("Funcionando!");
+    res.render("homePage");
 });
 //acima criei uma rota para a pagina inicial
+
+app.get("/passageiros", function(req,res){
+    res.render("homePage");
+});
 
 app.get("/cad", function(req,res){
     res.render("cadastro");
@@ -36,7 +40,7 @@ app.post("/add", function(req,res){
         email: req.body.email,
         telefone: req.body.telefone
     }).then(function(){
-        res.send("Passageiro cadastrado com sucesso");
+        res.redirect("/");
     }).catch(function(erro){
         res.send("Falha ao cadastrar passageiro\n"+"Erro: "+erro);
     })
