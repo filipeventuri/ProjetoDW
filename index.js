@@ -31,7 +31,7 @@ app.get("/pass", function(req,res){
    });
    
 });
-//acima criei uma rota para renderizar a pagina lista e exibir todos passageiros cadastrados
+//acima criei uma rota para renderizar a pagina lista e exibir todos passageiros cadastrados organizados por id de forma descrescente
 
 app.get("/cad", function(req,res){
     res.render("cadastro");

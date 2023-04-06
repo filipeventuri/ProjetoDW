@@ -20,3 +20,5 @@ const Passageiros = db.sequelize.define("Passageiros",{
 //acima eu garanti que a tabela será criada caso não exista uma
 
 module.exports = Passageiros;
+
+//acima exportei Passageiros
