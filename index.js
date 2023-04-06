@@ -1,3 +1,5 @@
+const Passageiros = require("./models/Passageiros");
+
 const Express = require("express");
 const app = Express();
 //acima estou habilitando o framework
@@ -9,12 +11,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 //acima estou configurando o body parser
 
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize("site", "Filipe", "Omega16la@", {
-    host: "localhost",
-    dialect: "mysql"
-});
-//acima estou habilitando o sequelize para poder manipular o banco de dados "site"
+
 
 const handlebars = require("express-handlebars");
 //acima estou habilitando o handlebars
@@ -23,42 +20,28 @@ app.engine('handlebars', handlebars.engine({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 //acima estou configurando a template engine
 
-sequelize.authenticate().then(function(){
-    console.log("Conectado ao banco de dados site");
-}).catch(function(erro){
-    console.log("falha ao se conectar ao banco de dados");
-});
-//acima estou verificando se me conectei ao banco de dados
-
-/********const Passageiros = sequelize.define('Passageiros', {
-    nomeCompleto:{
-        type: Sequelize.STRING
-    },
-    email:{
-        type: Sequelize.STRING
-    },
-    telefone:{
-        type: Sequelize.STRING
-    },
-
-});*******/
-
-//acima eu criei 1 vez uma tabela chamada Passageiros
-
-/***
- Passageiros.sync({force:true});
- ***/
-//acima eu garanti que a tabela foi criada
-
 app.get("/", function(req,res){
     res.send("Funcionando!");
 });
 //acima criei uma rota para a pagina inicial
+
 app.get("/cad", function(req,res){
     res.render("cadastro");
 });
-//acima criei uma rota para renderizar o html cadastro
+//acima criei uma rota do tipo get para renderizar o html cadastro
 
+app.post("/add", function(req,res){
+    Passageiros.create({
+        nomeCompleto: req.body.nomeCompleto,
+        email: req.body.email,
+        telefone: req.body.telefone
+    }).then(function(){
+        res.send("Passageiro cadastrado com sucesso");
+    }).catch(function(erro){
+        res.send("Falha ao cadastrar passageiro\n"+"Erro: "+erro);
+    })
+});
+//acima criei uma rota do tipo post a qual adiciona os dados passados pelo formulário de action /add no banco de dados
 
 app.listen(8081, function(){
     console.log("Server rodando");
