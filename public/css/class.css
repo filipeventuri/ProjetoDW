@@ -48,7 +48,7 @@
     padding: 3rem;
     border-radius: 15px;
     width: 45rem;
-    height: 80rem;
+    height: 82rem;
     border: 0.1rem solid white;
 }
 
@@ -228,3 +228,38 @@ h6{
     margin: 1rem;
 }
 
+.text-bg{
+    background-color: black;
+    border: 0.1rem solid white;
+    display:inline-flex;
+    flex-wrap: wrap;
+    width: 60rem;
+    height: 40rem;
+    min-width: 60rem;
+    min-height: 40rem;
+    font-size: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    border-radius: 15px;
+    padding: 4rem 1.5rem;
+    margin: 1rem;
+}
+
+.msg{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    opacity: 0;
+    animation: fadeIn 4s;
+    color: greenyellow;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        
+    }
+    
+}

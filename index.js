@@ -40,6 +40,13 @@ app.get("/quemSomos", function(req,res){
 });
 //acima criei uma rota pra pagina quem somos
 
+app.get("/callList", function(req,res){
+    Passageiros.findAll({order:[['id','DESC']]}, {where:{"presenca":'1'}}).then(function(lista){
+        res.render("callList", {lista:lista});
+       });
+});
+//acima criei uma rota pra pagina quem somos
+
 app.get("/pass", function(req,res){
    Passageiros.findAll({order:[['id','DESC']]}).then(function(lista){
     res.render("passageiros", {lista:lista});
@@ -63,7 +70,7 @@ app.post("/add", function(req,res){
         destino: req.body.destino
 
     }).then(function(){
-        res.redirect("/");
+        res.render("cadastroMsg");
     }).catch(function(erro){
         res.send("Falha ao cadastrar passageiro\n"+"Erro: "+erro);
     })
@@ -80,7 +87,31 @@ app.get("/remove/:id", function(req,res){
 
 //acima criei uma rota do tipo get para remover um passageiro
 
+app.get('/presente/:id', function(req, res){
+    Passageiros.update({
+    presenca: 1
+    },{where: {'id':req.params.id}}).then(function(){
+    res.redirect("/callList")
+    }).catch(function(err){
+      console.log(err);
+    })});
+//acima criei uma rota do tipo get para atualizar a variavel presenca para 1
+app.get('/ausente/:id', function(req, res){
+        Passageiros.update({
+        presenca: 0
+        },{where: {'id':req.params.id}}).then(function(){
+        res.redirect("/callList")
+        }).catch(function(err){
+          console.log(err);
+        })});
+//acima criei uma rota do tipo get para atualizar a variavel presenca para 0 
+  
+
 app.listen(8081, function(){
     console.log("Server rodando");
 });
 //acima estou iniciando o servidor
+
+
+//IMPORTANTE FALTA CONCERTAR O callList para WHERE presence = 1
+// falta criar o botão finalizar lista de chamada e criar uma rota para o mesmo o qual exibira a lista de passageiros WHERE presence = 0;

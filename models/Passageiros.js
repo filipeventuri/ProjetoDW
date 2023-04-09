@@ -17,6 +17,9 @@ const Passageiros = db.sequelize.define("Passageiros",{
     },
     destino:{
         type: db.Sequelize.STRING
+    },
+    presenca:{
+        type: db.Sequelize.INTEGER
     }
 });
 
