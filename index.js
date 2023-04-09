@@ -1,5 +1,5 @@
 const Passageiros = require("./models/Passageiros");
-
+//acima estou puxando a variável passageiros
 const Express = require("express");
 const app = Express();
 //acima estou habilitando o framework
@@ -11,14 +11,24 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 //acima estou configurando o body parser
 
+const path=require("path");
+//modulo para manipular diretorios importante para usar o framework bootstrap
+
+app.use(Express.static(path.join(__dirname,"public")));
+
+//acima está sendo definido que a pasta public está guardando os arquivos estáticos
 
 
 const handlebars = require("express-handlebars");
 //acima estou habilitando o handlebars
 
-app.engine('handlebars', handlebars.engine({defaultLayout: "main"}));
+app.engine('handlebars', handlebars.engine({
+    defaultLayout: "main",
+    partialsDir: path.join(__dirname, 'views/partials')
+}));
 app.set("view engine", "handlebars");
 //acima estou configurando a template engine
+//o defaultLayout foi definido como o arquivo main e em partialsDir foi definido o caminho para a pasta partials
 
 app.get("/", function(req,res){
     res.render("homePage");
@@ -31,7 +41,7 @@ app.get("/pass", function(req,res){
    });
    
 });
-//acima criei uma rota para renderizar a pagina lista e exibir todos passageiros cadastrados organizados por id de forma descrescente
+//acima criei uma rota para renderizar a pagina passageiros e exibir todos passageiros cadastrados organizados por id de forma descrescente
 
 app.get("/cad", function(req,res){
     res.render("cadastro");

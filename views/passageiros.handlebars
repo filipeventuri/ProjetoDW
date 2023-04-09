@@ -1,12 +1,12 @@
-<h1>LISTA DE PASSAGEIROS</h1>
-<a href="/"><button>Inicio</button></a>
 {{#each lista}}
-<h3>Data de adesão: {{dataValues.updatedAt}}</h3>
-<h3>Nome Completo: {{dataValues.nomeCompleto}}</h3>
-<h3>Email: {{dataValues.email}}</h3>
-<h3>Telefone: {{dataValues.telefone}}</h3>
+<br>
+<div class="pass">
+Data de adesão: {{dataValues.updatedAt}}<br>
+Nome Completo: {{dataValues.nomeCompleto}}<br>
+Email: {{dataValues.email}}<br>
+Telefone: {{dataValues.telefone}}<br>
 <a href="/remove/{{dataValues.id}}"><button>REMOVER</button></a>
-<hr>
+</div>
 {{/each}}
 
 

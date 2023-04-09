@@ -1,0 +1,208 @@
+:root{
+    --primary-color: #adeada;
+    --sec-color:#edeade;
+    --terc-color: #ddeadd;
+    --light-grey-color: #EEEEEE;
+    --gap:1rem;
+}
+
+.login{
+    box-shadow: 0 0 13px black;
+    background-color: rgb(04, 05, 29, 0.9);
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    transform: translate(-20%,-50%);
+    padding: 100px 20px;
+    border-radius: 15px;
+    color: white;
+    font-size: 12px;
+}
+
+.extra{
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    transform: translateX(-8%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    
+
+}
+
+.box{
+    box-shadow: 0 0 13px black;
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    transform: translate(-90%,-50%);
+    background-color: rgb(04, 05, 29, 0.9);
+    color: white;
+    padding: 53px 53px 90px 53px;
+    border-radius: 15px;
+    width: 300px;
+    height: 425px;
+}
+
+.inputBox{
+    position: relative;
+    
+}
+.inputUser{
+    padding: 15px 0 8px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color:white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.label-input{
+    position: relative;
+    bottom: 22px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputUser:focus ~ .label-input,
+.inputUser:valid ~ .label-input{
+    bottom: 50px;
+    font-size: 12px;
+    color: dodgerblue;
+}
+
+.submit{
+    background-color: dodgerblue;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    font-size: 15px;
+}
+
+.submit:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.menu{
+    background-color: black;
+    position: fixed;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--light-grey-color);
+}
+
+.menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+.menu ul li a{
+    display: block;
+    padding: 2rem;
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    position: relative;
+    
+}
+.menu h1{
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    font-size: 4rem;
+    color: white;
+
+}
+.menu h1 a{
+    color: inherit;
+}
+
+.menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 1.4rem;
+    left: 21%;
+    width: 0;
+    height: 0.2rem;
+    transition: all 300ms ease-in-out;
+}
+.menu ul li a:hover::after{
+    content: '';
+    position: absolute;
+    bottom: 1.4rem;
+    left: 10.5%;
+    width: 80%;
+    height: 0.2rem;
+    background-color: white;
+    
+}
+
+.main-content{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: var(--gap);
+    
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:var(--primary-color);
+    font-size: 2rem;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+h1{   
+    text-transform: uppercase;
+    font-size: 6rem;
+    }
+h2{
+    font-size: 5.5rem;
+    }
+h3{
+    font-size: 5rem;
+    }
+h4{
+    font-size: 4.5rem;
+    }
+h5{
+    font-size: 4rem;
+    }
+h6{
+    font-size: 3.5rem;
+    }
+    a{
+        text-decoration: none;
+    }
+
+.pass{
+    background-color: rgb(255, 255, 255, 0.8);
+    display: block;
+    width: 30vh;
+    height: 20vh;
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: black;
+}
+
