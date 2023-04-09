@@ -35,6 +35,14 @@ app.get("/", function(req,res){
 });
 //acima criei uma rota para a pagina inicial
 
+app.get("/check", function(req,res){
+    if(req.body.codigo=="omega"){
+        res.render("callList");
+    }else{
+        res.render("homePageMsg");
+    }
+}); 
+
 app.get("/quemSomos", function(req,res){
     res.render("quemSomos");
 });
