@@ -1,12 +1,13 @@
+
+
 {{#each lista}}
-<br>
 <div class="pass">
-Data de adesão: {{dataValues.updatedAt}}<br>
-Nome Completo: {{dataValues.nomeCompleto}}<br>
-Email: {{dataValues.email}}<br>
-Telefone: {{dataValues.telefone}}<br>
+Nome Completo: {{dataValues.nomeCompleto}}<br><br>
+Email: {{dataValues.email}}<br><br>
+Telefone: {{dataValues.telefone}}<br><br>
+Origem: {{dataValues.origem}}<br><br>
+Destino: {{dataValues.destino}}
 <a href="/remove/{{dataValues.id}}"><button>REMOVER</button></a>
 </div>
 {{/each}}
-
 

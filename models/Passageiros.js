@@ -12,6 +12,12 @@ const Passageiros = db.sequelize.define("Passageiros",{
     telefone:{
         type: db.Sequelize.STRING
     },
+    origem:{
+        type: db.Sequelize.STRING
+    },
+    destino:{
+        type: db.Sequelize.STRING
+    }
 });
 
 //acima eu criei 1 vez uma tabela chamada Passageiros

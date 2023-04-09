@@ -35,6 +35,11 @@ app.get("/", function(req,res){
 });
 //acima criei uma rota para a pagina inicial
 
+app.get("/quemSomos", function(req,res){
+    res.render("quemSomos");
+});
+//acima criei uma rota pra pagina quem somos
+
 app.get("/pass", function(req,res){
    Passageiros.findAll({order:[['id','DESC']]}).then(function(lista){
     res.render("passageiros", {lista:lista});
@@ -53,7 +58,10 @@ app.post("/add", function(req,res){
     Passageiros.create({
         nomeCompleto: req.body.nomeCompleto,
         email: req.body.email,
-        telefone: req.body.telefone
+        telefone: req.body.telefone,
+        origem: req.body.origem,
+        destino: req.body.destino
+
     }).then(function(){
         res.redirect("/");
     }).catch(function(erro){

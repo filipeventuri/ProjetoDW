@@ -10,13 +10,18 @@
     box-shadow: 0 0 13px black;
     background-color: rgb(04, 05, 29, 0.9);
     position: absolute;
-    left: 80%;
+    left: 50%;
     top: 50%;
-    transform: translate(-20%,-50%);
-    padding: 100px 20px;
+    transform: translate(-50%,-50%);
+    padding: 3rem 3rem;
     border-radius: 15px;
     color: white;
     font-size: 12px;
+    height: 32rem;
+    min-height: 32rem;
+    text-align: center;
+    border: 0.1rem solid white;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .extra{
@@ -35,15 +40,16 @@
 .box{
     box-shadow: 0 0 13px black;
     position: absolute;
-    left: 90%;
-    top: 50%;
-    transform: translate(-90%,-50%);
-    background-color: rgb(04, 05, 29, 0.9);
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(04, 05, 29);
     color: white;
-    padding: 53px 53px 90px 53px;
+    padding: 3rem;
     border-radius: 15px;
-    width: 300px;
-    height: 425px;
+    width: 45rem;
+    height: 80rem;
+    border: 0.1rem solid white;
 }
 
 .inputBox{
@@ -64,7 +70,7 @@
 
 .label-input{
     position: relative;
-    bottom: 22px;
+    bottom: 35px;
     left: 0px;
     pointer-events: none;
     transition: .5s;
@@ -72,39 +78,39 @@
 
 .inputUser:focus ~ .label-input,
 .inputUser:valid ~ .label-input{
-    bottom: 50px;
+    bottom: 6rem;
     font-size: 12px;
     color: dodgerblue;
 }
 
 .submit{
-    background-color: dodgerblue;
+    background-color:goldenrod;
     border-radius: 10px;
     color: white;
     padding: 15px;
     width: 100%;
     border: none;
     font-size: 15px;
+    font-family: sans-serif;
 }
 
 .submit:hover{
-    background-color: deepskyblue;
+    background-color:gold;
     cursor: pointer;
 }
 
 .menu{
-    background-color: black;
+    background-color: rgb(0,0,0,0.8);
     position: fixed;
     color: white;
     top: 0;
     left: 0;
     width: 100%;
-    border-bottom: 0.1rem solid var(--light-grey-color);
 }
 
 .menu-content{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
@@ -118,8 +124,8 @@
     display: block;
     padding: 2rem;
     text-shadow: 0.1rem 0.1rem 0.1rem black;
-    font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-family: 'Roboto Mono', monospace;
     color: white;
     position: relative;
     
@@ -147,16 +153,24 @@
     content: '';
     position: absolute;
     bottom: 1.4rem;
-    left: 10.5%;
-    width: 80%;
+    left: 5.5%;
+    width: 90%;
     height: 0.2rem;
-    background-color: white;
+    background-color:  rgb(04, 05, 29);
     
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus{
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .main-content{
-    max-width: 120rem;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 15rem 0 3rem;
     padding: var(--gap);
     
 }
@@ -182,6 +196,7 @@ h2{
     }
 h3{
     font-size: 5rem;
+    font-family: 'Roboto Mono', monospace;
     }
 h4{
     font-size: 4.5rem;
@@ -197,12 +212,19 @@ h6{
     }
 
 .pass{
-    background-color: rgb(255, 255, 255, 0.8);
-    display: block;
-    width: 30vh;
-    height: 20vh;
-    font-size: 2rem;
-    font-family: sans-serif;
-    color: black;
+    background-color: black;
+    border: 0.1rem solid white;
+    display:inline-flex;
+    flex-wrap: wrap;
+    width: 32rem;
+    height: 37rem;
+    min-width: 32rem;
+    min-height: 37rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    border-radius: 15px;
+    padding: 4rem 1.5rem;
+    margin: 1rem;
 }
 
