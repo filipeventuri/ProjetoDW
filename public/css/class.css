@@ -245,12 +245,18 @@ h6{
     margin: 1rem;
 }
 
+.a{
+    background-color:  rgb(04, 05, 29);
+}
 .msg{
     margin-top: 1rem;
     margin-left: 1rem;
+    width: 100%;
     opacity: 0;
     animation: fadeIn 4s;
     color: greenyellow;
+    width: 100%;
+    text-align: center;
 }
 
 @keyframes fadeIn{

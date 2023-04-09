@@ -41,7 +41,7 @@ app.get("/quemSomos", function(req,res){
 //acima criei uma rota pra pagina quem somos
 
 app.get("/callList", function(req,res){
-    Passageiros.findAll({order:[['id','DESC']]}, {where:{"presenca":'1'}}).then(function(lista){
+    Passageiros.findAll({order:[['id','DESC']]}, {where:{presenca:1}}).then(function(lista){
         res.render("callList", {lista:lista});
        });
 });
