@@ -35,13 +35,39 @@ app.get("/", function(req,res){
 });
 //acima criei uma rota para a pagina inicial
 
-app.get("/check", function(req,res){
-    if(req.body.codigo=="omega"){
-        res.render("callList");
+app.post("/check", function(req,res){
+    if( req.body.code === "delta90"){
+        res.redirect("/admin");
     }else{
         res.render("homePageMsg");
     }
 }); 
+
+//acima criei uma rota para verificar o codigo de acesso e para direcionar a pagina admin
+
+app.get("/admin", (req,res)=>{
+    res.render("admin");
+});
+
+//acima criei uma rota para renderizar admin
+
+app.get("/endCallList", (req,res)=>{
+    Passageiros.update({presenca:null},{where:{}}).then(()=>{
+        res.redirect("/admin");
+    }).catch((erro)=>{
+        res.send("Erro: "+erro);
+    });
+});
+
+//acima estou resetando a callList
+
+app.get("/callListMissing", (req,res)=>{
+    Passageiros.findAll({where:{presenca:0}},{order:[['id','DESC']]}).then(function(lista){
+        res.render("callListMissing", {lista:lista});
+       });
+});
+
+//acima criei uma rota para exibir quem está com presenca 0
 
 app.get("/quemSomos", function(req,res){
     res.render("quemSomos");
@@ -49,11 +75,11 @@ app.get("/quemSomos", function(req,res){
 //acima criei uma rota pra pagina quem somos
 
 app.get("/callList", function(req,res){
-    Passageiros.findAll({order:[['id','DESC']]}, {where:{presenca:1}}).then(function(lista){
+    Passageiros.findAll({where:{presenca:null}},{order:[['id','DESC']]}).then(function(lista){
         res.render("callList", {lista:lista});
        });
 });
-//acima criei uma rota pra pagina quem somos
+//acima criei uma rota para exibir quem está com presenca 1
 
 app.get("/pass", function(req,res){
    Passageiros.findAll({order:[['id','DESC']]}).then(function(lista){
@@ -62,6 +88,13 @@ app.get("/pass", function(req,res){
    
 });
 //acima criei uma rota para renderizar a pagina passageiros e exibir todos passageiros cadastrados organizados por id de forma descrescente
+
+app.get("/upPass", function(req,res){
+    Passageiros.findAll({order:[['id','DESC']]}).then(function(lista){
+     res.render("upPass", {lista:lista});
+    });
+    
+ });
 
 app.get("/cad", function(req,res){
     res.render("cadastro");
@@ -75,7 +108,8 @@ app.post("/add", function(req,res){
         email: req.body.email,
         telefone: req.body.telefone,
         origem: req.body.origem,
-        destino: req.body.destino
+        destino: req.body.destino,
+        presenca:null
 
     }).then(function(){
         res.render("cadastroMsg");
@@ -97,7 +131,7 @@ app.get("/remove/:id", function(req,res){
 
 app.get('/presente/:id', function(req, res){
     Passageiros.update({
-    presenca: 1
+    presenca: true
     },{where: {'id':req.params.id}}).then(function(){
     res.redirect("/callList")
     }).catch(function(err){
@@ -106,7 +140,7 @@ app.get('/presente/:id', function(req, res){
 //acima criei uma rota do tipo get para atualizar a variavel presenca para 1
 app.get('/ausente/:id', function(req, res){
         Passageiros.update({
-        presenca: 0
+        presenca: false
         },{where: {'id':req.params.id}}).then(function(){
         res.redirect("/callList")
         }).catch(function(err){

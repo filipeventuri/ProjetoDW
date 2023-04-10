@@ -19,7 +19,7 @@ const Passageiros = db.sequelize.define("Passageiros",{
         type: db.Sequelize.STRING
     },
     presenca:{
-        type: db.Sequelize.INTEGER
+        type: db.Sequelize.BOOLEAN
     }
 });
 

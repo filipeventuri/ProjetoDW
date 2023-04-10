@@ -48,8 +48,20 @@
     padding: 3rem;
     border-radius: 15px;
     width: 45rem;
-    height: 82rem;
+    min-width: fit-content;
+    height: 85rem;
+    min-height:fit-content;
     border: 0.1rem solid white;
+}
+
+.painel{
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    height: 40rem;
+    min-height:fit-content;
+    width: 20rem;
+    min-width: fit-content;
 }
 
 .inputBox{
@@ -92,6 +104,7 @@
     border: none;
     font-size: 15px;
     font-family: sans-serif;
+    margin-left: 0;
 }
 
 .submit:hover{
@@ -282,3 +295,32 @@ h6{
     text-align: center;
     font-size: 2rem;
 }
+
+.presente{
+    background-color:darkgreen;
+    
+
+}
+.presente:hover{
+    background-color: green;
+}
+
+.ausente{
+    background-color: darkred;
+
+}
+
+.ausente:hover{
+    background-color: red;
+}
+
+.next{
+    width: 32rem;
+    min-width: 32rem;
+}
+
+.btn-painel{
+    width: 22rem;
+}
+
+
