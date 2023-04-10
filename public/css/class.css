@@ -230,9 +230,9 @@ h6{
     display:inline-flex;
     flex-wrap: wrap;
     width: 32rem;
-    height: 37rem;
+    height: fit-content;
     min-width: 32rem;
-    min-height: 37rem;
+    min-height: 45rem;
     font-size: 1.5rem;
     font-family: 'Roboto Mono', monospace;
     color: white;

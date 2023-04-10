@@ -121,7 +121,7 @@ app.post("/add", function(req,res){
 
 app.get("/remove/:id", function(req,res){
     Passageiros.destroy({where: {'id':req.params.id}}).then(function(){
-        res.redirect("/pass");
+        res.redirect("/upPass");
     }).catch(function(erro){
         res.send("Erro: " + erro);
     })
