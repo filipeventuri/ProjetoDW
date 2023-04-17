@@ -1,0 +1,370 @@
+:root{
+    --primary-color: #adeada;
+    --sec-color:#edeade;
+    --terc-color: #ddeadd;
+    --light-grey-color: #EEEEEE;
+    --gap:1rem;
+}
+
+.login{
+    box-shadow: 0 0 13px black;
+    background-color: rgb(04, 05, 29, 0.9);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 3rem 3rem;
+    border-radius: 15px;
+    color: white;
+    font-size: 12px;
+    height: 32rem;
+    min-height: 32rem;
+    text-align: center;
+    border: 0.1rem solid white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.extra{
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    transform: translateX(-8%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    
+
+}
+
+.box{
+    box-shadow: 0 0 13px black;
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(04, 05, 29);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    width: 45rem;
+    min-width: fit-content;
+    height: 85rem;
+    min-height:fit-content;
+    border: 0.1rem solid white;
+}
+
+.painel{
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    height: 40rem;
+    min-height:fit-content;
+    width: 20rem;
+    min-width: fit-content;
+}
+
+.inputBox{
+    position: relative;
+    
+}
+.inputUser{
+    padding: 15px 0 8px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color:white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.label-input{
+    position: relative;
+    bottom: 35px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputUser:focus ~ .label-input,
+.inputUser:valid ~ .label-input{
+    bottom: 6rem;
+    font-size: 12px;
+    color: dodgerblue;
+}
+
+.submit{
+    background-color:goldenrod;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 0;
+}
+
+.submit:hover{
+    background-color:gold;
+    cursor: pointer;
+}
+
+.menu{
+    background-color: rgb(0,0,0,0.8);
+    position: fixed;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.menu-content{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+.menu ul li a{
+    display: block;
+    padding: 2rem;
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    font-size: 2.2rem;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    position: relative;
+    
+}
+.menu h1{
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    font-size: 4rem;
+    color: white;
+
+}
+.menu h1 a{
+    color: inherit;
+}
+
+.menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 1.4rem;
+    left: 21%;
+    width: 0;
+    height: 0.2rem;
+    transition: all 300ms ease-in-out;
+}
+.menu ul li a:hover::after{
+    content: '';
+    position: absolute;
+    bottom: 1.4rem;
+    left: 5.5%;
+    width: 90%;
+    height: 0.2rem;
+    background-color:  white;
+    
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus{
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.main-content{
+    max-width: 100%;
+    margin: 0 15rem 0 3rem;
+    padding: var(--gap);
+    
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:var(--primary-color);
+    font-size: 2rem;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+h1{   
+    text-transform: uppercase;
+    font-size: 6rem;
+    }
+h2{
+    font-size: 5.5rem;
+    }
+h3{
+    font-size: 5rem;
+    font-family: 'Roboto Mono', monospace;
+    }
+h4{
+    font-size: 4.5rem;
+    }
+h5{
+    font-size: 4rem;
+    }
+h6{
+    font-size: 3.5rem;
+    }
+    a{
+        text-decoration: none;
+    }
+
+.pass{
+    background-color: black;
+    border: 0.1rem solid white;
+    display:inline-flex;
+    flex-wrap: wrap;
+    width: 32rem;
+    height: fit-content;
+    min-width: 32rem;
+    min-height: 45rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    border-radius: 15px;
+    padding: 4rem 1.5rem;
+    margin: 1rem;
+}
+
+.text-bg{
+    background-color: black;
+    border: 0.1rem solid white;
+    display:inline-flex;
+    flex-wrap: wrap;
+    width: 60rem;
+    height: 40rem;
+    min-width: 60rem;
+    min-height: 40rem;
+    font-size: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    border-radius: 15px;
+    padding: 4rem 1.5rem;
+    margin: 1rem;
+}
+
+.a{
+    background-color:  rgb(04, 05, 29);
+}
+.msg{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 4s;
+    color: greenyellow;
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        
+    }
+    
+}
+
+.msg-a{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 4s;
+    color:red;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.presente{
+    background-color:darkgreen;
+    
+
+}
+.presente:hover{
+    background-color: green;
+}
+
+.ausente{
+    background-color: darkred;
+
+}
+
+.ausente:hover{
+    background-color: red;
+}
+
+.next{
+    width: 32rem;
+    min-width: 32rem;
+}
+
+.btn-painel{
+    width: 22rem;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgb(04, 05, 29);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 18rem 0 14rem 10rem;
+}
+
+input{
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+button{
+    background-color: goldenrod;
+    border: none;
+    padding: 9px;
+    width: 10rem;
+    min-width: 10rem;
+    margin: 0 1rem;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 3rem;
+}
+
+button:hover{
+    background-color: gold;
+    cursor: pointer;
+}
+
+
+fieldset{
+    border: none;
+}
+
+legend{
+    font-size: 30px;
+    text-align: center;
+}
