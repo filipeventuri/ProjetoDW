@@ -9,19 +9,22 @@
 .login{
     box-shadow: 0 0 13px black;
     background-color: rgb(04, 05, 29, 0.9);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    padding: 3rem 3rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
     border-radius: 15px;
     color: white;
     font-size: 12px;
-    height: 32rem;
-    min-height: 32rem;
+    height: 40vh;
+    width: 50vh;
+    min-height: fit-content;
+    min-width: fit-content;
     text-align: center;
     border: 0.1rem solid white;
     font-family: 'Roboto Mono', monospace;
+    margin: 2rem auto;
 }
 
 .extra{
@@ -192,11 +195,6 @@ html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-body{
-    font-family: 'Open Sans', sans-serif;
-    color:var(--primary-color);
-    font-size: 2rem;
-}
 h1,h2,h3,h4,h5,h6{
     font-family: 'Montserrat', sans-serif;
 }
@@ -220,7 +218,8 @@ h5{
 h6{
     font-size: 3.5rem;
     }
-    a{
+
+a{
         text-decoration: none;
     }
 
@@ -284,14 +283,11 @@ h6{
 }
 
 .msg-a{
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
+    margin: 1rem auto;
     opacity: 0;
     animation: fadeIn 4s;
     color:red;
-    width: 100%;
+    width: fit-content;
     text-align: center;
     font-size: 2rem;
 }

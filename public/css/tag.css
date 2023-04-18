@@ -1,10 +1,21 @@
+:root{
+    --primary-color: #adeada;
+    --sec-color:#edeade;
+    --terc-color: #ddeadd;
+    --light-grey-color: #EEEEEE;
+    --gap:1rem;
+}
+
 body{
     font-family: 'Roboto Mono', monospace;
     background-color: rgb(04, 05, 29);
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     width: 100%;
-    height: 100vh;
-    padding: 18rem 0 14rem 10rem;
+    height: 100%;
+    padding: 18rem 0;
+    color:var(--primary-color);
+    font-size: 2rem;
+    margin: 0;
 }
 
 input{
@@ -42,4 +53,8 @@ fieldset{
 legend{
     font-size: 30px;
     text-align: center;
+}
+
+form{
+    width: 45vh;
 }

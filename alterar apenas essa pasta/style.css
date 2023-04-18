@@ -17,12 +17,14 @@
     border-radius: 15px;
     color: white;
     font-size: 12px;
-    height: 32rem;
-    width: 80vh;
-    min-height: 32rem;
+    height: 40vh;
+    width: 50vh;
+    min-height: fit-content;
+    min-width: fit-content;
     text-align: center;
     border: 0.1rem solid white;
     font-family: 'Roboto Mono', monospace;
+    margin: 2rem auto;
 }
 
 .extra{
@@ -193,7 +195,6 @@ html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-
 h1,h2,h3,h4,h5,h6{
     font-family: 'Montserrat', sans-serif;
 }
@@ -217,7 +218,8 @@ h5{
 h6{
     font-size: 3.5rem;
     }
-    a{
+
+a{
         text-decoration: none;
     }
 
@@ -281,14 +283,11 @@ h6{
 }
 
 .msg-a{
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
+    margin: 1rem auto;
     opacity: 0;
     animation: fadeIn 4s;
     color:red;
-    width: 100%;
+    width: fit-content;
     text-align: center;
     font-size: 2rem;
 }
@@ -320,15 +319,24 @@ h6{
     width: 22rem;
 }
 
+:root{
+    --primary-color: #adeada;
+    --sec-color:#edeade;
+    --terc-color: #ddeadd;
+    --light-grey-color: #EEEEEE;
+    --gap:1rem;
+}
+
 body{
     font-family: 'Roboto Mono', monospace;
     background-color: rgb(04, 05, 29);
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     width: 100%;
-    height: 100vh;
-    padding: 18rem 0 14rem 10rem;
+    height: 100%;
+    padding: 18rem 0;
     color:var(--primary-color);
     font-size: 2rem;
+    margin: 0;
 }
 
 input{
@@ -366,4 +374,8 @@ fieldset{
 legend{
     font-size: 30px;
     text-align: center;
+}
+
+form{
+    width: 45vh;
 }
