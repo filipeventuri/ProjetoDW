@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <form action="/add" method="POST">
+            <fieldset>
+                <legend><b>Cadastro de passageiro</b></legend>
+                <br><br>
+                <div class="input-box">
+                <input type="text" name="nomeCompleto" minlength="10" maxlength="40" class="inputUser" required>
+                <label for="nomeCompleto" class="label-input">Nome Completo</label>
+            </div>
+            <br>
+            <div class="input-box">
+                <input type="text" name="email" minlength="10" maxlength="50" class="inputUser" required>
+                <label for="email" class="label-input">Email</label>
+            </div>
+            <br>
+            <div class="input-box">
+                <input type="text" name="telefone" minlength="11" maxlength="12" class="inputUser" required>
+                <label for="telefone" class="label-input">DDD + Celular</label>
+            </div>
+            <br>
+            <div class="input-box">
+                <input type="text" name="origem" minlength="10" maxlength="50"class="inputUser" required>
+                <label for="origem" class="label-input">Origem</label>
+            </div>
+            <br>
+            <div class="input-box">
+                <input type="text" name="destino" minlength="10" maxlength="50" class="inputUser" required>
+                <label for="destino" class="label-input">Destino</label>
+            </div>
+            <br>
+            <input type="submit" name="submit" class="submit"><br>
+            <a href="/admin"><button class="submit">Retornar</button></a>
+            </fieldset>
+            
+        </form>
+       
+        
+</div>
+</body>
+</html>
