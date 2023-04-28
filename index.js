@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-//acima estou configurando o body parser
+//acima estou configurando o body parser Salveeee
 
 const path=require("path");
 //modulo para manipular diretorios importante para usar o framework bootstrap
