@@ -42,10 +42,11 @@
 
 .box{
     box-shadow: 0 0 13px black;
-    position: absolute;
-    left: 50%;
-    top: 56%;
-    transform: translate(-50%,-50%);
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
     background-color: rgb(04, 05, 29);
     color: white;
     padding: 3rem;
@@ -58,9 +59,6 @@
 }
 
 .painel{
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%,-50%);
     height: 40rem;
     min-height:fit-content;
     width: 20rem;
